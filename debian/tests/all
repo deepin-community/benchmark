@@ -1,0 +1,22 @@
+#!/bin/sh
+# autopkgtest check: Build and run a programs against benchmark
+# (C) 2021
+# Author: Anton Gladky <gladk@debian.org>
+
+set -e
+CURDIR=$(pwd)
+
+git apply debian/tests/fix_tests.patch
+
+cp -r test $AUTOPKGTEST_TMP/
+cd $AUTOPKGTEST_TMP
+
+cmake -DBENCHMARK_ENABLE_GTEST_TESTS=1 ${CURDIR}/test
+make -j12
+# repetitions_test
+# user_counters_tabular_test 
+
+ls -l
+for TEST in args_product_test basic_test benchmark_test complexity_test cxx03_test diagnostics_test display_aggregates_only_test donotoptimize_test filter_test fixture_test internal_threading_test map_test memory_manager_test multiple_ranges_test options_test perf_counters_test register_benchmark_test report_aggregates_only_test reporter_output_test skip_with_error_test templated_fixture_test user_counters_test user_counters_thousands_test; do
+    ./$TEST
+done

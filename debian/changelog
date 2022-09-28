@@ -1,0 +1,146 @@
+benchmark (1.6.0-2) unstable; urgency=medium
+
+  [ Anton Gladky ]
+  * [8806bb9] Minor update of autopkgtests
+
+  [ Timo Röhling ]
+  * [8c09dbc] Fix static library build. (Closes: #996956)
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 21 Oct 2021 20:41:47 +0200
+
+benchmark (1.6.0-1) unstable; urgency=medium
+
+  [ Michael R. Crusoe ]
+  * Fix for the autopkgtest to use the default g++ compiler from
+    Kentaro Hayashi <kenhys@gmail.com>. (Closes: #985726)
+
+  [ Anton Gladky ]
+  * [8e11569] New upstream version 1.6.0. (Closes: #983988)
+  * [7ad7ffb] Update patch
+  * [5c01fd9] Set Standards-version to 4.6.0
+  * [fa4ea7e] Fix autopkgtests
+
+ -- Anton Gladky <gladk@debian.org>  Tue, 19 Oct 2021 20:46:26 +0200
+
+benchmark (1.5.2-2) unstable; urgency=medium
+
+  * Team upload.
+  * debian/patches/fix-missing-symbols-in-static.patch:
+    Work around -flto bug, fix courtesy Kentaro Hayashi
+    Closes: #968461
+  * Mark libbenchmark-dev as Multi-Arch: same as per the Multiarch
+    hinter.
+  * Standards-Version: 4.5.1 (routine-update)
+  * Modernize debian/watch.
+
+ -- Michael R. Crusoe <crusoe@debian.org>  Mon, 23 Nov 2020 10:40:57 +0100
+
+benchmark (1.5.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version
+  * debhelper-compat 13 (routine-update)
+  * Add salsa-ci file (routine-update)
+  * Rules-Requires-Root: no (routine-update)
+
+ -- Michael R. Crusoe <crusoe@debian.org>  Sat, 10 Oct 2020 18:09:32 +0200
+
+benchmark (1.5.1-1) unstable; urgency=medium
+
+  * [00ce51f] New upstream version 1.5.1
+  * [e620882] Refresh patches
+  * [0359951] Add --buildsystem=cmake to d/rules
+  * [666ae4d] Set upstream metadata fields: Bug-Database, Bug-Submit,
+              Repository, Repository-Browse.
+  * [5ec0f74] Update standards version to 4.5.0, no changes needed.
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 13 Jun 2020 22:46:45 +0200
+
+benchmark (1.5.0-4) unstable; urgency=medium
+
+  * Cherry-pick RISC-V patch from upstream for riscv64 support.
+
+ -- Michael R. Crusoe <michael.crusoe@gmail.com>  Thu, 28 Nov 2019 17:27:24 +0100
+
+benchmark (1.5.0-3) unstable; urgency=medium
+
+  * Build in release mode so that timings are not affected. (Closes: #941279)
+  * Set upstream metadata fields: Repository.
+  * libbenchmark-dev: include the README file in
+    /usr/share/doc/libbenchmark-dev
+
+ -- Michael R. Crusoe <michael.crusoe@gmail.com>  Wed, 27 Nov 2019 11:51:49 +0100
+
+benchmark (1.5.0-2) unstable; urgency=medium
+
+  * [262160d] Disable some tests, failing on mipsel
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 23 Sep 2019 21:15:31 +0200
+
+benchmark (1.5.0-1) unstable; urgency=medium
+
+  [ Michael R. Crusoe ]
+  * [5568a99] New upstream version 1.5.0
+  * [8f0e28b] debhelper-compat 12
+  * [5d33c05] Standards-Version: 4.4.0
+  * [95d65ff] Apply patch from upstream so we can specify the location
+              of Debian's googletest source
+  * [cf849ee] Set upstream metadata fields: Name.
+  * [8f89de1] use Debian's copy of googletest
+  * [d02264a] cmake files are now in /usr/lib/*/cmake/benchmar
+  * [13b785e] use pkg-config in autopkgtest
+  * [4191c2b] libbenchmark-tools is Multi-Arch: foreign
+  * [b328ed4] avoid g++-9 bug
+
+  [ Anton Gladky ]
+  * [77c8a77] Add Michael as an uploader
+  * [a9d43d4] Remove obsolete fields Name from debian/upstream/metadata.
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 22 Sep 2019 22:21:38 +0200
+
+benchmark (1.4.1-3) unstable; urgency=medium
+
+  [ Anton Gladky ]
+  * [d0feebb] Install *.a files. (Closes: #912078)
+  * [b64af1c] Fix error in d/copyright. (Closes: #912653)
+
+  [ John David Anglin ]
+  * [151eb89] Fix compilation on hppa. (Closes: #910606)
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 18 Nov 2018 00:03:07 +0100
+
+benchmark (1.4.1-2) unstable; urgency=medium
+
+  * [f17dafe] Fix tests for the s390 arch
+  * [67da8cd] Disable temporarily two tests, failing on mips
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 21 Oct 2018 13:49:45 +0200
+
+benchmark (1.4.1-1) unstable; urgency=medium
+
+  * [482a6f3] Update VCS-fields
+  * [3df809d] Set Standards-Version to 4.2.1
+  * [9562e08] Add gmock and gtest as a build-depends
+  * [4465821] New upstream version 1.4.1
+  * [2d86da7] Refresh patch, remove old one
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 08 Oct 2018 09:55:44 +0200
+
+benchmark (1.3.0-2) unstable; urgency=medium
+
+  [ Robert Guo ]
+  * [c65f0ab] Use STCK to get the CPU clock on s390x. (Closes: #881736)
+
+  [ Anton Gladky ]
+  * [3245571] Update d/watch
+  * [c64ac86] Use pkg-info.mk for extracting Upstream version
+  * [656070d] Set Standards-Version: 4.1.3
+  * [3282de0] Apply cme fix dpkg
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 08 Mar 2018 21:10:48 +0100
+
+benchmark (1.3.0-1) unstable; urgency=medium
+
+  * Initial upload. (Closes: #881378)
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 11 Nov 2017 10:21:55 +0100

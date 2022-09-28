@@ -1,0 +1,3 @@
+Tests: all
+Depends: libbenchmark-dev, build-essential, cmake, libgtest-dev, libgmock-dev, git
+Restrictions: allow-stderr

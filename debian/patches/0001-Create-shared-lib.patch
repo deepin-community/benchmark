@@ -1,0 +1,36 @@
+From 1855c5f905958cefb7900f209cfe88575abc0bab Mon Sep 17 00:00:00 2001
+From: Anton Gladky <gladk@debian.org>
+Date: Thu, 9 Nov 2017 21:01:38 +0100
+Subject: [PATCH] Create shared lib
+
+---
+ CMakeLists.txt     | 2 +-
+ src/CMakeLists.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+Index: benchmark/CMakeLists.txt
+===================================================================
+--- benchmark.orig/CMakeLists.txt
++++ benchmark/CMakeLists.txt
+@@ -92,7 +92,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_C
+ 
+ # Read the git tags to determine the project version
+ include(GetGitVersion)
+-get_git_version(GIT_VERSION)
++#get_git_version(GIT_VERSION)
+ 
+ # If no git version can be determined, use the version
+ # from the project() command
+Index: benchmark/src/CMakeLists.txt
+===================================================================
+--- benchmark.orig/src/CMakeLists.txt
++++ benchmark/src/CMakeLists.txt
+@@ -17,7 +17,7 @@ foreach(item ${BENCHMARK_MAIN})
+   list(REMOVE_ITEM SOURCE_FILES "${item}")
+ endforeach()
+ 
+-add_library(benchmark ${SOURCE_FILES})
++add_library(benchmark SHARED ${SOURCE_FILES})
+ add_library(benchmark::benchmark ALIAS benchmark)
+ set_target_properties(benchmark PROPERTIES
+   OUTPUT_NAME "benchmark"

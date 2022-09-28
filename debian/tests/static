@@ -1,0 +1,25 @@
+#!/bin/sh
+# autopkgtest check: Build with libbenchmark_main.a
+
+set -e
+CURDIR=$(pwd)
+
+TEST="static_test"
+echo Test: $TEST
+WORKDIR=$(mktemp -d)
+echo $WORKDIR
+trap "rm -rf $WORKDIR" 0 INT QUIT ABRT PIPE TERM
+cd $WORKDIR
+
+cat << EOF > $TEST.cc
+#include <benchmark/benchmark.h>
+
+static void Empty(benchmark::State& state) {}
+BENCHMARK(Empty);
+EOF
+
+g++ -o test $TEST.cc -std=c++11 -lpthread $(pkg-config benchmark --libs) -lbenchmark_main
+echo "build: OK"
+[ -x test ]
+./test
+echo "run: OK"
