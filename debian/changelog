@@ -1,3 +1,9 @@
+benchmark (1.6.0-2deepin0) unstable; urgency=medium
+
+  * No source change upload against GCC 12.
+
+ -- Tianyu Chen <sweetyfish@deepin.org>  Thu, 19 Sep 2024 22:42:50 +0800
+
 benchmark (1.6.0-2) unstable; urgency=medium
 
   [ Anton Gladky ]
