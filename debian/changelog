@@ -1,3 +1,9 @@
+benchmark (1.6.0-2deepin1) unstable; urgency=medium
+
+  * feat: add sw64 support
+
+ -- Deepin Packages Builder <packages@deepin.org>  Thu, 22 May 2025 14:57:39 +0800
+
 benchmark (1.6.0-2deepin0) unstable; urgency=medium
 
   * No source change upload against GCC 12.
