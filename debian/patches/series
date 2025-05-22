@@ -1,3 +1,4 @@
 0001-Create-shared-lib.patch
 03_fix_hppa_ftbfs.patch
 04_fix_lto-static-build.patch
+0001-add-sw-support.diff
